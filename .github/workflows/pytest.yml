@@ -1,9 +1,8 @@
-name: Pytest
+name: Pylint
 
 on: [push]
-
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -19,6 +18,8 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         pip install pytest-cov
+    - name: Run migrations
+      run: flask db upgrade
     - name: Run tests
       run: |
         pytest -s --cov --cov-report html --cov-fail-under 79
