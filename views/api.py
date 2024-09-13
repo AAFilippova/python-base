@@ -44,11 +44,10 @@ def get_posts():
 
 @api.route("/api/users_without_posts", methods=["GET"])
 def get_users_without_posts():
-    users = User.query.outerjoin(Post).filter(Post.id == None).all()
+    users = User.query.outerjoin(Post).filter(Post.id is None).all()
     return jsonify(
         [
             {"id": user.id, "name": user.name, "username": user.username, "email": user.email}
             for user in users
         ]
     )
-

@@ -1,7 +1,7 @@
 import os
 from flask import Flask
-from models.models import db
 from flask_migrate import Migrate
+from models.models import db
 from views.views import views
 from views.api import api
 
@@ -19,4 +19,4 @@ app.register_blueprint(views)
 app.register_blueprint(api)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True) #pylint:disable=missing-final-newline)

@@ -14,5 +14,3 @@ class Post(db.Model):
     title = db.Column(db.String(100), unique=True)
     body = db.Column(db.String)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=True)
-
-

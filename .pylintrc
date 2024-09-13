@@ -1,6 +1,10 @@
 [MAIN]
 disable=
+    C0304, # missing-final-newline
     C0114, #  Dynamic attributes
     C0115, #  Line too long
     C0116, #  __str__ does not return str
     R0903, # too few public methods
+    E1101, #  no-member
+    W0621, #  redefined-outer-name
+    W0613, #  unused-argumen

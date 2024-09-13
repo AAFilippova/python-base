@@ -12,7 +12,7 @@ def index():
 @views.route("/information", endpoint="information")
 def information():
     users_with_posts = User.query.join(Post).all()
-    users_without_posts = User.query.outerjoin(Post).filter(Post.id == None).all()
+    users_without_posts = User.query.outerjoin(Post).filter(Post.id is None).all()
     return render_template(
         "information.html",
         users_with_posts=users_with_posts,
