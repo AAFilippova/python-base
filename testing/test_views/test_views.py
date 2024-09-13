@@ -12,9 +12,6 @@ class TestViews:
         response = client.get('/')
         assert response.status_code == 200
 
-    def test_index(self, client):
-        response = client.get('/')
-        assert response.status_code == 200
     def test_information(self, client):
         response = client.get('/information')
         assert response.status_code == 200

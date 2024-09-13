@@ -1,5 +1,6 @@
 [MAIN]
 disable=
+    C0103, #  invalid-name
     C0304, # missing-final-newline
     C0114, #  Dynamic attributes
     C0115, #  Line too long
