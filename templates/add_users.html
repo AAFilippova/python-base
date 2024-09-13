@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Add a new user
+{% endblock %}
+
+{% block body %}
+<body>
+  <h1>Новый пользователь</h1>
+  <form method="post" class="container">
+
+    <div>
+      <label for="u-name">Name:</label>
+      <p><input
+          id="u-name"
+          type="text"
+          name="name"
+          required
+      ></p>
+    </div>
+
+    <div>
+      <label for="u-price">Username:</label>
+      <p><input
+          id="u-price"
+          type="text"
+          name="username"
+          required
+      ></p>
+    </div>
+
+    <div>
+      <label for="u-email">Email:</label>
+      <p><input
+          id="u-email"
+          type="text"
+          name="email"
+          required
+      ></p>
+    </div>
+
+    <input type="submit" value="Add">
+  </form>
+{% endblock %}

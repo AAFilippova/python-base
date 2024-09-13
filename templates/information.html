@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Add new product
+{% endblock %}
+
+{% block body %}
+    <h1>Пользователи с постами</h1>
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Title</th>
+            <th>Body</th>
+        </tr>
+        {% for user in users_with_posts %}
+            {% for post in user.posts %}
+                <tr>
+                    <td>{{ user.name }}</td>
+                    <td>{{ user.username }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ post.title }}</td>
+                    <td>{{ post.body }}</td>
+                </tr>
+            {% endfor %}
+        {% endfor %}
+    </table>
+
+    <h1>Пользователи без постов</h1>
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Username</th>
+            <th>email</th>
+        </tr>
+        {% for user in users_without_posts%}
+            <tr>
+                <td>{{ user.name }}</td>
+                <td>{{ user.username }}</td>
+                <td>{{ user.email }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+{% endblock %}
